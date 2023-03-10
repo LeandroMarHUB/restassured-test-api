@@ -94,4 +94,27 @@ public class CreateStepDefinitions {
         Assertions.assertFalse(this.createResponse.getCreatedAt().isBlank(), "A data de criaçao nao deveria está em branco");
     }
 
+
+    @E("nao insiro o nome")
+    public void semNome(){
+        this.createRequest.setName(null);
+    }
+
+    @E("nao insiro o job")
+    public void semJob(){
+        this.createRequest.setJob(null);
+    }
+
+    @E("recebo o nome nulo")
+    public void validaNomeNulo() {
+        Assertions.assertNull(this.createResponse.getName(), "O nome deveria está nulo");
+    }
+
+    @E("recebo o job nulo")
+    public void validaJobNulo(){
+        Assertions.assertNull(this.createResponse.getJob(), "O job deveria está nulo");
+    }
+
+
+
 }

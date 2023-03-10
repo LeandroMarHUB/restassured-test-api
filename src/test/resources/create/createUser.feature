@@ -20,5 +20,25 @@ Funcionalidade: Criar um usuario
 
 
     Exemplos:
-      | name            | job         | statusCode |
-      | Leandro Martins | Analista QA | 201        |
+      | name            | job               | statusCode |
+      | Leandro Martins | Analista QA       | 201        |
+      | Juscelino       | Analista Negocios | 201        |
+
+
+  Esquema do Cenário: Criar um usuario sem nome e sem job
+
+    Dado que eu quero criar um novo usuario
+    E nao insiro o nome
+    E nao insiro o job
+    Quando eu envio minhas infomacoes
+    Entao eu recebo uma resposta
+    E valido o status code "<statusCode>"
+    E recebo o nome nulo
+    E recebo o job nulo
+    E recebo um id
+    E recebo uma data de criacao
+
+
+    Exemplos:
+      | statusCode |
+      | 201        |
